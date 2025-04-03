@@ -1,7 +1,7 @@
 <Button>
     font_name: "assets/Fredoka"
     background_normal: ""
-    background_color: (30/255, 4/255, 4/255, 1)
+    background_color: "#0099ff"
 
 <MainWidget>
     BoxLayout:
@@ -15,12 +15,13 @@
             multiline: False
             halign: "right"
             font_name: "assets/Fredoka"
-            font_size: 48
-            size_hint: (1, 0.19)
+            font_size: 150
+            size_hint: (1, 0.2)
             id: answer_box
+            foreground_color: "#ffffff"
             background_normal : ""
             background_active: ""
-            background_color: (92/255, 19/255, 19/255, 1)
+            background_color: "#0088ff"
 
         GridLayout:
             cols: 4
@@ -28,113 +29,113 @@
 
             Button:
                 text: "AC"
-                font_size: 32
+                font_size: 90
                 on_press: root.clear()
 
             Button:
                 text: "Delete"
-                font_size: 32
+                font_size: 50
                 on_press: root.delete_pressed()
 
             Button:
                 text: "%"
-                font_size: 32
+                font_size: 90
                 on_press: root.sign_pressed("%")
 
             Button:
                 text: "÷"
-                font_size: 32
-                background_color: (163/255, 0, 0, 1)
+                font_size: 90
+                background_color: "#0075ff"
                 on_press: root.sign_pressed("÷")
 
             #### Row 2 ####
 
             Button:
                 text: "7"
-                font_size: 32
+                font_size: 90
                 on_press: root.number_pressed("7")
 
             Button:
                 text: "8"
-                font_size: 32
+                font_size: 90
                 on_press: root.number_pressed("8")
 
             Button:
-                text: "8"
-                font_size: 32
+                text: "9"
+                font_size: 90
                 on_press: root.number_pressed("9")
 
             Button:
                 text: "×"
-                font_size: 32
-                background_color: (163/255, 0, 0, 1)
+                font_size: 90
+                background_color: "#0075ff"
                 on_press: root.sign_pressed("×")
 
             #### Row 3 ####
 
             Button:
                 text: "4"
-                font_size: 32
+                font_size: 90
                 on_press: root.number_pressed("4")
 
             Button:
                 text: "5"
-                font_size: 32
+                font_size: 90
                 on_press: root.number_pressed("5")
 
             Button:
                 text: "6"
-                font_size: 32
+                font_size: 90
                 on_press: root.number_pressed("6")
 
             Button:
                 text: "-"
-                font_size: 32
-                background_color: (163/255, 0, 0, 1)
+                font_size: 90
+                background_color: "#0075ff"
                 on_press: root.sign_pressed("-")
 
             #### Row 4 ####
 
             Button:
                 text: "1"
-                font_size: 32
+                font_size: 90
                 on_press: root.number_pressed("1")
 
             Button:
                 text: "2"
-                font_size: 32
+                font_size: 90
                 on_press: root.number_pressed("2")
 
             Button:
                 text: "3"
-                font_size: 32
+                font_size: 90
                 on_press: root.number_pressed("3")
 
             Button:
                 text: "+"
-                font_size: 32
-                background_color: (163/255, 0, 0, 1)
+                font_size: 90
+                background_color: "#0075ff"
                 on_press: root.sign_pressed("+")
 
             #### Row 5 ####
 
             Button:
                 text: "+/-"
-                font_size: 32
+                font_size: 90
                 on_press: root.pn_pressed()
 
             Button:
                 text: "0"
-                font_size: 32
+                font_size: 90
                 on_press: root.number_pressed("0")
 
             Button:
                 text: "."
-                font_size: 32
+                font_size: 90
                 on_press: root.dm_pressed()
 
             Button:
                 text: "="
-                font_size: 32
-                background_color: (255/255, 0/255, 0/255, 1)
+                font_size: 90
+                background_color: "#0075ff"
                 on_press: root.equals_pressed()

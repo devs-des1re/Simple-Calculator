@@ -1,10 +1,9 @@
 from kivy.app import App
 from kivy.uix.widget import Widget
-from kivy.core.window import Window
 from kivy.lang.builder import Builder
+from kivy.config import Config
 
 Builder.load_file("main.kv")
-Window.size = (350, 500)
 
 class MainWidget(Widget):
     def clear(self):
@@ -13,16 +12,19 @@ class MainWidget(Widget):
     def number_pressed(self, number):
         prev_number = self.ids.answer_box.text
 
-        if prev_number == "0":
+        if prev_number == "0" or prev_number == "Math Error" or prev_number == "Syntax Error":
             self.ids.answer_box.text = f"{number}"
         else:
             self.ids.answer_box.text = f"{prev_number}{number}"
 
     def sign_pressed(self, sign):
         prev_number = self.ids.answer_box.text
+
         if prev_number[-1] == "÷" or prev_number[-1] == "×" or prev_number[-1] == "+" or prev_number[-1] == "-":
             prev_number = prev_number[:-1]
             self.ids.answer_box.text = f"{prev_number}{sign}"
+        elif prev_number == "Math Error" or prev_number == "Syntax Error":
+            self.ids.answer_box.text = "0"
         else:
             self.ids.answer_box.text = f"{prev_number}{sign}"
 
@@ -31,7 +33,7 @@ class MainWidget(Widget):
         
         if prev_number != "0":
             if "-" in prev_number:
-                self.ids.answer_box.text = f"{prev_number.replace("-", "")}"
+                self.ids.answer_box.text = f"{prev_number.replace('-', '')}"
             else:
                 self.ids.answer_box.text = f"-{prev_number}"
     
